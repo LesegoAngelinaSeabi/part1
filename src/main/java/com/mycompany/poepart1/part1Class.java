@@ -14,7 +14,7 @@ public class part1Class {
      
       // Check if the username is correct
     public boolean checkUsername() {
-        if (username.length() <= 5 && username.contains("_")) {
+        if(username.length() <= 5 && username.contains("_")) {
             return true;
         }
         return false;
