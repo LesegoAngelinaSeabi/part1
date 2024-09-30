@@ -19,7 +19,7 @@ part1Class userLogin = new part1Class();
         
         Scanner input = new Scanner(System.in);
 
-        // User registration
+        // User registration for account
         System.out.println("Register your account..........");
         System.out.println("Enter your First Name:");
         userLogin.firstName = input.next();
@@ -30,10 +30,9 @@ part1Class userLogin = new part1Class();
         System.out.println("Enter your  Password:");
         userLogin.password = input.next();
         
-//user registers their account
           System.out.println(userLogin.registerUser());
         while (!userLogin.checkUsername() || !userLogin.checkPasswordComplexity()) {
-            System.out.println("Try registering again!");
+            System.out.println("username is incorrectly formatted and password does not meet the complexity requirements");
             System.out.println("Enter your Username:");
             userLogin.username = input.next();
             System.out.println("Enter your Password:");
@@ -42,14 +41,14 @@ part1Class userLogin = new part1Class();
         }
  // User login their details
         System.out.println("Login...");
-        System.out.println("Enter Username:");
+        System.out.println("Enter your Username:");
         userLogin.enteredUsername = input.next();
-        System.out.println("Enter Password:");
+        System.out.println("Enter your Password:");
         userLogin.enteredPassword = input.next();
         System.out.println(userLogin.returnLoginStatus());
 
         while (!userLogin.loginUser()) {
-            System.out.println("Try  Login again ..........");
+            System.out.println("Failed login!!!..........");
             System.out.println("Enter your Username:");
             userLogin.enteredUsername = input.next();
             System.out.println("Enter your  Password:");
