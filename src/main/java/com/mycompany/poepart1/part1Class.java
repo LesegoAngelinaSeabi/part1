@@ -38,6 +38,38 @@ public class part1Class {
         }
         return hasCapitalLetter && hasNumber && hasSpecialChar;
     }
+ // Register the user by checking username and password validity
+    public String registerUser() {
+        if (checkUsername()) {
+            System.out.println("Username successfully captured.");
+        } else {
+            System.out.println("Username is not correctly formatted. Please ensure that your Username contains an underscore and is no more than 5 characters in length.");
+        }
+        if (checkPasswordComplexity()) {
+            System.out.println("Password successfully captured.");
+        } else {
+            System.out.println("if Password is not correctly formatted. Please ensure that the password contains at least 8 characters, a capital letter, a number and a special character.");
+        }
+        if (checkUsername() && checkPasswordComplexity()) {
+            System.out.println("The two above conditions have been met and the user has been registered successfully.");
+        } else {
+            if (!checkPasswordComplexity()) {
+                System.out.println("The Password does not meet the complexity requirements.");
+            }
+            if (!checkUsername()) {
+                System.out.println("The username is incorrectly formatted.");
+            }
+        }
+        return "";
+    }
+
+    boolean returnLoginStatus() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    boolean loginUser() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
 
       
