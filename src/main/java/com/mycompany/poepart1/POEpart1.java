@@ -22,40 +22,32 @@ part1Class userLogin = new part1Class();
         // User registration for account
         System.out.println("Register your account..........");
         System.out.println("Enter your First Name:");
-        userLogin.firstName = input.next();
+        String firstName = input.next();
+        userLogin.setFirstName(firstName);
         System.out.println("Enter your Last Name:");
-        userLogin.lastName = input.next();
+        String lastName = input.next();
+        userLogin.setLastName(lastName);
         System.out.println("Enter  your Username:");
-        userLogin.username = input.next();
+        String username = input.next();
+        userLogin.setUsername(username);
         System.out.println("Enter your  Password:");
-        userLogin.password = input.next();
+        String password = input.next();
+        userLogin.setPassword(password);
         
           System.out.println(userLogin.registerUser());
-        while (!userLogin.checkUsername() || !userLogin.checkPasswordComplexity()) {
+        while (!userLogin.checkUsername(username) || !userLogin.checkPasswordComplexity(password )) {
             System.out.println("username is incorrectly formatted and password does not meet the complexity requirements");
             System.out.println("Enter your Username:");
-            userLogin.username = input.next();
+            username = input.next();
             System.out.println("Enter your Password:");
-            userLogin.password = input.next();
+            password = input.next();
             System.out.println(userLogin.registerUser());
         }
- // User login their details
-        System.out.println("Login...");
-        System.out.println("Enter your Username:");
-        userLogin.enteredUsername = input.next();
-        System.out.println("Enter your Password:");
-        userLogin.enteredPassword = input.next();
-        System.out.println(userLogin.returnLoginStatus());
-
-        while (!userLogin.loginUser()) {
-            System.out.println("Failed login!!!..........");
-            System.out.println("Enter your Username:");
-            userLogin.enteredUsername = input.next();
-            System.out.println("Enter your  Password:");
-            userLogin.enteredPassword = input.next();
-            System.out.println(userLogin.returnLoginStatus());
-        }
-
+         // User login their details
+       
+        
+          userLogin.loginUser(username ,password );
+        userLogin.Returnlogin();
     }
 }
 
