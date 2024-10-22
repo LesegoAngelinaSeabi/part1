@@ -42,9 +42,10 @@ public class part1ClassTest {
     @Test
     public void testCheckUsername() {
         System.out.println("kyk_1");
+        String name ="KJyl_1";
         part1Class instance = new part1Class();
         boolean expResult = true;
-        boolean result = instance.checkUsername();
+        boolean result = instance.checkUsername(name);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("kyle!!!!!!");
@@ -56,9 +57,10 @@ public class part1ClassTest {
     @Test
     public void testCheckPasswordComplexity() {
         System.out.println("Ch&&sec@ke99!");
+        String pass="Ch&&sec@ke99!";
         part1Class instance = new part1Class();
         boolean expResult = true;
-        boolean result = instance.checkPasswordComplexity();
+        boolean result = instance.checkPasswordComplexity(pass);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("password");

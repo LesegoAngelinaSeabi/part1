@@ -3,9 +3,7 @@
  */
 
 package com.mycompany.poepart1;
-
-import java.util.Scanner;
-
+import javax.swing.*;
 /**
  *
  * @author RC_Student_lab
@@ -13,45 +11,67 @@ import java.util.Scanner;
 public class POEpart1 {
     
     
+
     public static void main(String[] args) {
        
-part1Class userLogin = new part1Class();
-        
-        Scanner input = new Scanner(System.in);
-
+       part1Class userLogin = new part1Class();
         // User registration for account
-        System.out.println("Register your account..........");
-        System.out.println("Enter your First Name:");
-        String firstName = input.next();
+        JOptionPane.showMessageDialog(null,"Register your account..........");
+        
+        String firstName = JOptionPane.showInputDialog("Enter your First Name:");
         userLogin.setFirstName(firstName);
-        System.out.println("Enter your Last Name:");
-        String lastName = input.next();
+        
+       
+        String lastName = JOptionPane.showInputDialog("Enter your Last Name:");
         userLogin.setLastName(lastName);
-        System.out.println("Enter  your Username:");
-        String username = input.next();
+        
+        
+        String username = JOptionPane.showInputDialog("Enter  your Username:");
         userLogin.setUsername(username);
-        System.out.println("Enter your  Password:");
-        String password = input.next();
+        
+        
+        String password = JOptionPane.showInputDialog("Enter your  Password:");
         userLogin.setPassword(password);
         
           System.out.println(userLogin.registerUser());
         while (!userLogin.checkUsername(username) || !userLogin.checkPasswordComplexity(password )) {
-            System.out.println("username is incorrectly formatted and password does not meet the complexity requirements");
-            System.out.println("Enter your Username:");
-            username = input.next();
-            System.out.println("Enter your Password:");
-            password = input.next();
+             JOptionPane.showMessageDialog(null,"username is incorrectly formatted and password does not meet the complexity requirements");
+           
+            
+            username = JOptionPane.showInputDialog("Enter your Username:");
+            
+            password = JOptionPane.showInputDialog("Enter your Password:");
             System.out.println(userLogin.registerUser());
         }
          // User login their details
        
         
           userLogin.loginUser(username ,password );
+        
         userLogin.Returnlogin();
+        //
+        int Menu =0;
+        while(Menu!=3){
+            
+         Menu = Integer.parseInt(JOptionPane.showInputDialog("Select an option: \n 1: Add Tasks \n 2: Show Report \n 3: Exit"));
+         
+         switch(Menu){
+             case 1:
+            JOptionPane.showMessageDialog(null,"username is incorrectly formatted and password does not meet the complexity requirements");
+      
+               break;  
+             case 2:
+               JOptionPane.showMessageDialog(null,"Coming school");
+
+                 break;
+             case 3:
+                 System.exit(0);
+                 break;
+             default:
+                 JOptionPane.showMessageDialog(null,"Invalid option");
+                 break;
+         }
+        }
+        
     }
 }
-
-
-
-
-    

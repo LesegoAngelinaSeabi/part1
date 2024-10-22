@@ -3,9 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.poepart1;
-
-import java.util.Scanner;
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author RC_Student_lab
@@ -57,7 +55,7 @@ public class part1Class {
              //System.out.println("Username successfully captured.");
              validate=true;
         }else{
-           System.out.println("Username is not correctly formatted. Please ensure that your Username contains an underscore and is no more than 5 characters in length.");  
+           JOptionPane.showMessageDialog(null,"Username is not correctly formatted. Please ensure that your Username contains an underscore and is no more than 5 characters in length.");
             validate=false;
         }
         return validate;
@@ -83,7 +81,8 @@ public class part1Class {
         if(hasCapitalLetter && hasNumber && hasSpecialChar){
             verify=true;
         }else{
-            System.out.println("password is not successfully captured");
+            JOptionPane.showMessageDialog(null,"password is not successfully captured");
+            
             verify=false;
         }
         return verify;
@@ -92,13 +91,16 @@ public class part1Class {
     public String registerUser() {
        
         if (checkUsername(username) && checkPasswordComplexity(password)) {
-            System.out.println("The two above conditions have been met and the user has been registered successfully.");
+              JOptionPane.showMessageDialog(null,"The two above conditions have been met and the user has been registered successfully.");
+            
         } else {
             if (!checkPasswordComplexity(password)) {
-                System.out.println("The Password does not meet the complexity requirements.");
+                 JOptionPane.showMessageDialog(null,"The Password does not meet the complexity requirements.");
+               
             }
             if (!checkUsername(username)) {
-                System.out.println("The username is incorrectly formatted.");
+                JOptionPane.showMessageDialog(null,"The username is incorrectly formatted.");
+                
             }
         }
         return "";
@@ -108,17 +110,17 @@ public class part1Class {
 
     public boolean loginUser(String user, String pass) {
         
-        Scanner scan = new Scanner(System.in);
         do{
-        System.out.print("Enter username:");
-        user=scan.nextLine();
-        System.out.print("Enter password:");
-        pass=scan.nextLine();
+        
+        user=JOptionPane.showInputDialog("Enter username:");
+       
+        pass=JOptionPane.showInputDialog("Enter password:");
         
        if(user.equals(username) && pass.equals(password)){
            istrue=true;
        }else{
-           System.out.println("password or username is incorrect please try again");
+           JOptionPane.showMessageDialog(null,"password or username is incorrect please try again");
+           
        }
         }while(!istrue);
         return istrue;
@@ -128,9 +130,11 @@ public class part1Class {
       public String Returnlogin(){
           
           if(istrue){
-              System.out.println("welcome back " +  getFirstName() + " " + getLastName() ); 
+               JOptionPane.showMessageDialog(null,"welcome back " +  getFirstName() + " " + getLastName());
+              
           }else{
-              System.out.println("username or password is incorrect please try again");
+              JOptionPane.showMessageDialog(null,"username or password is incorrect please try again");
+              
           }
           
           return " ";
